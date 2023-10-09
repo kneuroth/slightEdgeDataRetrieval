@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class GoalController {
     }
 
     @GetMapping("")
-    public List<Goal> getGoals() {
+    public List<Goal> getGoals() throws SQLException {
         return goalDAO.getAllGoals();
     }
 }
